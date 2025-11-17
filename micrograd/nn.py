@@ -1,5 +1,5 @@
 import random
-from micrograd.engine import Value
+from engine import Value
 
 class Neuron:
   def __init__(self, n_inputs: int):

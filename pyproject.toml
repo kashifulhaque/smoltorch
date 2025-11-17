@@ -10,4 +10,14 @@ dependencies = [
     "matplotlib>=3.10.7",
     "mlx>=0.29.4",
     "nbconvert>=7.16.6",
+    "numpy>=2.3.4",
+    "scikit-learn>=1.7.2",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+]
+
+[tool.setuptools]
+packages = ["nanotorch", "micrograd"]
