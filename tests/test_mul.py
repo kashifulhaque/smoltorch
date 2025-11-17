@@ -1,4 +1,4 @@
-from nanotorch.tensor import Tensor
+from smoltorch.tensor import Tensor
 
 # Test 1: Simple multiplication (no broadcasting)
 print("Test 1 - No broadcasting:")

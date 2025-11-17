@@ -1,5 +1,5 @@
-from nanotorch.nn import Linear
-from nanotorch.tensor import Tensor
+from smoltorch.nn import Linear
+from smoltorch.tensor import Tensor
 
 # Test 1: Single sample forward pass
 print("Test 1 - Single forward pass:")

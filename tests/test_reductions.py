@@ -1,4 +1,4 @@
-from nanotorch.tensor import Tensor
+from smoltorch.tensor import Tensor
 
 # Test 1: Sum all elements
 print("Test 1 - Sum (all elements):")

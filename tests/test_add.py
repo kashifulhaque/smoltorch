@@ -1,4 +1,4 @@
-from nanotorch.tensor import Tensor
+from smoltorch.tensor import Tensor
 
 # Test 1: Simple addition (no broadcasting)
 a = Tensor([1.0, 2.0, 3.0])

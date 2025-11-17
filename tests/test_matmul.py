@@ -1,4 +1,4 @@
-from nanotorch.tensor import Tensor
+from smoltorch.tensor import Tensor
 
 # Test 1: Simple 2D matmul
 print("Test 1 - Simple 2D matmul:")

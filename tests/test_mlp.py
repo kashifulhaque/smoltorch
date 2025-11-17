@@ -1,6 +1,6 @@
 import numpy as np
-from nanotorch.tensor import Tensor
-from nanotorch.nn import MLP
+from smoltorch.tensor import Tensor
+from smoltorch.nn import MLP
 
 # Test 1: MLP forward pass
 print("Test 1 - MLP forward pass:")

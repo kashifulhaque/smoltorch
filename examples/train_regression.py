@@ -1,7 +1,7 @@
 from sklearn.datasets import make_regression
 from sklearn.model_selection import train_test_split
-from nanotorch.tensor import Tensor
-from nanotorch.nn import MLP, SGD
+from smoltorch.tensor import Tensor
+from smoltorch.nn import MLP, SGD
 
 # Generate synthetic regression data
 print("Generating data...")

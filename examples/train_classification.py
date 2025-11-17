@@ -2,8 +2,8 @@ import numpy as np
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from nanotorch.tensor import Tensor
-from nanotorch.nn import MLP, SGD, binary_cross_entropy
+from smoltorch.tensor import Tensor
+from smoltorch.nn import MLP, SGD, binary_cross_entropy
 
 # Load breast cancer dataset (binary classification)
 print("Loading breast cancer dataset...")
