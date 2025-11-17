@@ -147,6 +147,15 @@ class Tensor:
     out._backward = _backward
     return out
   
+  def log(self) -> 'Tensor':
+    out = Tensor(np.log(self.data), (self, ), 'log')
+
+    def _backward():
+      self.grad += (1 / self.data) * out.grad
+    
+    out._backward = _backward
+    return out
+  
   def backward(self):
     # build topological order
     topo = []
@@ -187,3 +196,14 @@ class Tensor:
     
     out._backward = _backward
     return out
+  
+  def sigmoid(self) -> 'Tensor':
+    sig = 1 / (1 + np.exp(-self.data))
+    out = Tensor(sig, (self, ), 'sigmoid')
+
+    def _backward():
+      self.grad += sig * (1 - sig) * out.grad
+    
+    out._backward = _backward
+    return out
+  

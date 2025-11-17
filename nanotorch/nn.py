@@ -1,6 +1,26 @@
 import numpy as np
 from nanotorch.tensor import Tensor
 
+# helper functions
+def binary_cross_entropy(y_pred, y_true):
+  """
+  Binary cross entropy loss with numerical stability
+
+  Args:
+    y_pred: predicted probabilities, shape (batch_size, 1)
+    y_true: true labels (0 or 1), shape (batch_size, 1)
+  
+  Returns:
+    scalar loss
+  """
+  # clip preds to avoid 'log(0)'
+  epsilon = 1e-7
+
+  # bce: -[y*log(p) + (1-y)*log(1-p)]
+  term1 = y_true * y_pred.log()
+  term2 = (Tensor(1.0) - y_true) * (Tensor(1.0) - y_pred + epsilon).log()
+  return -(term1 + term2).mean()
+
 class Linear:
   def __init__(self, in_features, out_features):
     """
@@ -10,7 +30,9 @@ class Linear:
       in_features: input dims
       out_features: output dims
     """
-    self.W = Tensor(np.random.randn(in_features, out_features) * 0.1)
+    # xavier/glorot initialization
+    limit = np.sqrt(6 / (in_features + out_features))
+    self.W = Tensor(np.random.uniform(-limit, limit, (in_features, out_features)))
     self.b = Tensor(np.zeros(out_features))
   
   def __call__(self, x):
