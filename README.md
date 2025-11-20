@@ -1,4 +1,4 @@
-# 🔥 smoltorch
+# 🔥 smoltorch • [blog](https://blog.ifkash.dev/smoltorch)
 
 <div align="center">
 
